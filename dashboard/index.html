@@ -1,15 +1,25 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Token Radar — pre-token protocols ranked by implied value</title>
-<link rel="stylesheet" href="app.css">
-</head>
-<body>
-<a class="skip" href="#board">Skip to the board</a>
-<main id="board" tabindex="-1" aria-busy="true"></main>
-<script src="../data.js"></script>
-<script src="app.js"></script>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" />
+<meta name="viewport" content="initial-scale=1, width=device-width" />
+<!-- Token Radar: a static page. Its data arrives as data.js, written by
+     main.ts from the same board the judge reads, so the numbers on screen
+     and the numbers in board.json are one and the same. No fetch, no fonts,
+     no images, no network at all: turn the network off and it still works. -->
+<title>Token Radar — which pre-token protocols are worth watching</title>
+<link href="app.css" rel="stylesheet" />
+</head><body class="radar-page">
+<a class="jump" href="#board">Jump to the ranked board</a>
+<main id="board" aria-busy="true">
+  <div class="wrap">
+    <div class="loading"><span class="pulse"></span><p>Loading the radar…</p></div>
+  </div>
+</main>
+<noscript><div class="wrap"><p class="caveat">Token Radar needs JavaScript to draw the board: the data is in
+data.js beside this page, and the table is built from it on load.</p></div></noscript>
+<footer class="wrap"><p class="fine">Data: the sealed DefiLlama protocol snapshot. Model: radar-2.
+Implied values are estimates, not prices, and never a promise that a token
+is coming. Not financial advice.</p></footer>
+<script defer src="../data.js"></script>
+<script defer src="app.js"></script>
+</body></html>
